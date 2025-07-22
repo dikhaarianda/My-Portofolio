@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data/projects';
 import { FaGithub, FaExternalLinkAlt, FaSearch } from 'react-icons/fa';
 import LazyImage from "../components/LazyImage";
+import iMg from "../assets/github.webp"
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -108,9 +109,10 @@ const Projects = () => {
                 whileHover={{ y: -5 }}
               >
               <div className="h-52 relative overflow-hidden bg-gray-100">
-                <LazyImage 
-                  src={project.image} 
-                  alt={project.name} 
+                <LazyImage
+                  // src={project.image}
+                  src={iMg}
+                  alt={project.name}
                   className="w-full h-full object-cover"
                 />
 

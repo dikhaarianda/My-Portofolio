@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="mt-19 pt-20 sm:pt-0 min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat relative overflow-hidden">
+    <section id="home" className="mt-19 md:mt-0 pt-20 sm:pt-0 min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat relative overflow-hidden">
       {/* Particle Animation Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
@@ -55,7 +55,7 @@ const Hero = () => {
             </motion.h1>
 
             <motion.h1
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 pb-2" 
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 pb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
