@@ -42,11 +42,40 @@ const Navbar = () => {
   ];
 
   const scrollToSection = (id) => {
-    setIsOpen(false);
-    document.querySelector(id).scrollIntoView({
+    const element = document.querySelector(id);
+    if (!element) return;
+
+    const navbarHeight = 80;
+    const targetY = element.offsetTop - navbarHeight;
+
+    if (Math.abs(window.scrollY - targetY) < 5) {
+      setIsOpen(false);
+      return;
+    }
+
+    window.scrollTo({
+      top: targetY,
       behavior: 'smooth'
     });
+
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 700);
   };
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleClickOutside = (event) => {
+      const dropdown = document.getElementById('mobile-menu');
+      if (dropdown && !dropdown.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
 
   return (
     <motion.nav
@@ -62,7 +91,7 @@ const Navbar = () => {
           onClick={() => scrollToSection('#home')}
           className="text-2xl font-bold text-primary-600 font-['Poppins'] tracking-wide flex items-center"
         >
-          <span className="relative">It's My Porto<span className="text-gray-800">.</span>
+          <span className="relative">Welcome<span className="text-gray-800">!</span>
             <motion.span
               className="absolute -bottom-1 left-0 w-full h-[3px] bg-primary-500 origin-left"
               initial={{ scaleX: 0 }}
@@ -111,6 +140,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

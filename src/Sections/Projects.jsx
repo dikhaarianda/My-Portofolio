@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data/projects';
 import { FaGithub, FaExternalLinkAlt, FaSearch } from 'react-icons/fa';
+import LazyImage from "../components/LazyImage";
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
@@ -106,10 +107,12 @@ const Projects = () => {
                 onMouseLeave={() => setHoveredProject(null)}
                 whileHover={{ y: -5 }}
               >
-                <div className="h-52 relative overflow-hidden bg-gray-100">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <img src={project.image} alt="Project-Image" />
-                  </div>
+              <div className="h-52 relative overflow-hidden bg-gray-100">
+                <LazyImage 
+                  src={project.image} 
+                  alt={project.name} 
+                  className="w-full h-full object-cover"
+                />
 
                   {/* Overlay on hover */}
                   <motion.div

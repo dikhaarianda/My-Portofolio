@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
+import LazyImage from "../components/LazyImage";
 import photo from "../assets/Foto-CV.webp"
 import MaintenanceModal from "../components/MaintenanceModal";
 
@@ -19,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat relative overflow-hidden">
+    <section id="home" className="mt-19 pt-20 sm:pt-0 min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat relative overflow-hidden">
       {/* Particle Animation Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
@@ -118,7 +119,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-3 bg-white text-gray-800 rounded-md font-medium shadow-soft hover:shadow-hover transition-all border border-gray-100 flex items-center gap-2"
             >
-              <FaGithub className="text-lg" /> GitHub Projects
+              <vGithub className="text-lg" /> GitHub Projects
             </motion.a>
           </motion.div>
 
@@ -176,11 +177,13 @@ const Hero = () => {
               }}
             />
             <div className="relative bg-gradient-to-tr from-primary-100 to-white p-1 rounded-full shadow-xl">
-              <div className="rounded-full overflow-hidden aspect-square bg-white flex items-center justify-center">
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 text-secondary-400 font-medium">
-                  <img src={photo} alt="Dikha's CV Photo" />
-                </div>
-              </div>
+            <div className="rounded-full overflow-hidden aspect-square bg-white flex items-center justify-center">
+              <LazyImage
+                src={photo}
+                alt="Dikha's CV Photo"
+                className="w-full h-full rounded-full"
+              />
+            </div>
             </div>
           </div>
         </motion.div>

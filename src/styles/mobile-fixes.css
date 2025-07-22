@@ -1,0 +1,141 @@
+/* Mobile Responsiveness Fixes */
+
+/* Hero Section Mobile Fixes */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-image {
+    order: -1;
+    margin-bottom: 2rem;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .scroll-indicator {
+    bottom: 5px;
+  }
+}
+
+/* Projects Section Mobile Fixes */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Navbar Mobile Fixes */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    padding: 2rem;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+}
+
+/* General Mobile Fixes */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+
+  .text-responsive {
+    font-size: 1rem;
+  }
+
+  .heading-responsive {
+    font-size: 1.875rem;
+  }
+}
+
+/* Touch-friendly buttons */
+@media (hover: none) {
+  .btn-hover:hover {
+    transform: none;
+  }
+
+  .btn-hover:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Improve tap targets */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
