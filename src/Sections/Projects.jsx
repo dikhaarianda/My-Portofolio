@@ -97,12 +97,16 @@ const Projects = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
                 variants={itemVariants}
                 layout
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.3 }}
                 className="bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-hover transition-all border border-gray-100"
                 onMouseEnter={() => setHoveredProject(project.id)}
                 onMouseLeave={() => setHoveredProject(null)}

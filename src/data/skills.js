@@ -1,26 +1,26 @@
 export const skills = [
   {
     category: "Programming Languages",
-    items: ["Python", "JavaScript", "HTML", "CSS", "SQL"]
+    items: ["Python", "JavaScript", "C/C++", "HTML5", "CSS3", "SQL"],
   },
   {
     category: "Frontend Development",
-    items: ["React.js", "Tailwind CSS", "Bootstrap", "Material UI"]
+    items: ["React.js", "Tailwind CSS", "Bootstrap", "Responsive Design", "Vite"]
   },
   {
     category: "Backend Development",
-    items: ["Node.js", "Express.js", "Django", "Flask"]
+    items: ["Node.js", "REST API", "MongoDB"]
   },
   {
     category: "AI & Machine Learning",
-    items: ["TensorFlow", "PyTorch", "Scikit-learn", "NLP"]
+    items: ["TensorFlow", "OpenCV", "Scikit-learn", "Pandas", "NumPy", "Computer Vision"]
   },
   {
-    category: "Databases",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"]
+    category: "Data & Visualization",
+    items: ["Jupyter Notebook", "Tableau", "Data Analysis", "Statistical Modeling"]
   },
   {
-    category: "DevOps & Tools",
-    items: ["Git", "Docker", "AWS", "CI/CD"]
+    category: "Tools & Deployment",
+    items: ["Git", "Streamlit", "Vercel", "GitHub Pages", "VS Code"]
   }
 ];

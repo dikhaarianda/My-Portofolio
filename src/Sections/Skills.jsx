@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { skills } from '../data/skills';
 import {
   FaCode, FaReact, FaServer,
-  FaRobot, FaDatabase, FaTools
+  FaRobot, FaChartBar, FaTools
 } from 'react-icons/fa';
 
 const Skills = () => {
@@ -35,9 +35,9 @@ const Skills = () => {
         return <FaServer className="text-2xl" />;
       case 'AI & Machine Learning':
         return <FaRobot className="text-2xl" />;
-      case 'Databases':
-        return <FaDatabase className="text-2xl" />;
-      case 'DevOps & Tools':
+      case 'Data & Visualization':
+        return <FaChartBar className="text-2xl" />;
+      case 'Tools & Deployment':
         return <FaTools className="text-2xl" />;
       default:
         return <FaCode className="text-2xl" />;

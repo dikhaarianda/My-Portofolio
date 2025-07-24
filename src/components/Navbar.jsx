@@ -48,19 +48,30 @@ const Navbar = () => {
     const navbarHeight = 80;
     const targetY = element.offsetTop - navbarHeight;
 
-    if (Math.abs(window.scrollY - targetY) < 5) {
+    const threshold = 5;
+
+    // Kalau sudah dekat, langsung tutup
+    if (Math.abs(window.scrollY - targetY) < threshold) {
       setIsOpen(false);
       return;
     }
 
+    // Scroll ke target
     window.scrollTo({
       top: targetY,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
 
-    setTimeout(() => {
-      setIsOpen(false);
-    }, 700);
+    // Buat fungsi handler scroll
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - targetY) < threshold) {
+        setIsOpen(false);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    // Tambahkan event listener sementara
+    window.addEventListener('scroll', handleScroll);
   };
 
   useEffect(() => {

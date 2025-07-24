@@ -84,7 +84,7 @@ const About = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-700">Degree</h4>
-                      <p className="text-secondary-500">Bachelor of Computer Science</p>
+                      <p className="text-secondary-500">Bachelor of Informatics</p>
                     </div>
                   </motion.div>
 
